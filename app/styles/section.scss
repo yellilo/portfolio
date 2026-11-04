@@ -1,0 +1,32 @@
+.section {
+  --bg-color: var(--section-bg-color);
+  --padding: 1.5rem;
+  margin-block: 2rem;
+  padding: var(--padding);
+
+  &__buttons {
+    display: flex;
+    gap: 0.5rem;
+
+    @media (width < 600px) {
+      margin-block: 0.25rem 1rem;
+      margin-inline-start: 1rem;
+      flex-direction: column;
+      float: inline-end;
+    }
+
+    @media (width >= 600px) {
+      top: var(--padding);
+      right: var(--padding);
+      position: absolute;
+    }
+  }
+
+  .button {
+    padding: 0.5rem;
+
+    svg {
+      vertical-align: top;
+    }
+  }
+}

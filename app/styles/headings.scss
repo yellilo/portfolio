@@ -1,0 +1,46 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--expanded-font-family);
+
+  &:hover .heading-anchor:not(:hover) {
+    opacity: 0.5;
+  }
+}
+
+h1 {
+  text-shadow: 0 0.02em 0.2em rgb(from var(--glow-color) r g b / 0.3);
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.heading-anchor {
+  color: var(--accent-color);
+  opacity: 0;
+  transition: opacity 0.1s;
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &:hover,
+  &:focus-visible {
+    text-decoration: none;
+    opacity: 1;
+  }
+
+  &::before {
+    content: " ";
+  }
+}
+
+ul {
+  margin-left: 1.5rem;
+}

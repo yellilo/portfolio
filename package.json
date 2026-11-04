@@ -1,0 +1,37 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "react-router dev",
+    "dev:host": "react-router dev --host",
+    "build": "react-router build",
+    "serve": "serve build/client",
+    "typecheck": "react-router typegen && tsc"
+  },
+  "dependencies": {
+    "@react-router/node": "7.15.1",
+    "@react-router/serve": "7.15.1",
+    "isbot": "^5.1.36",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "react-router": "7.15.1",
+    "serve": "^14.2.6"
+  },
+  "devDependencies": {
+    "@mdx-js/rollup": "^3.1.1",
+    "@react-router/dev": "7.15.1",
+    "@types/mdx": "^2.0.13",
+    "@types/node": "^22",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "remark-frontmatter": "^5.0.0",
+    "remark-mdx-frontmatter": "^5.2.0",
+    "sass": "^1.100.0",
+    "typescript": "^5.9.3",
+    "vite": "^8.0.3",
+    "vite-plugin-babel": "^1.7.3",
+    "vite-plugin-svgr": "^5.2.0"
+  }
+}

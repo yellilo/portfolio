@@ -1,0 +1,44 @@
+.hero {
+  margin-block: 3rem;
+
+  h1 {
+    font-size: 5rem;
+    font-weight: bold;
+    margin: 0;
+
+    @media (width < 700px) {
+      font-size: 3rem;
+    }
+  }
+
+  small {
+    font-size: 2rem;
+    line-height: 0;
+
+    @media (width < 700px) {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-block: 2rem;
+  }
+
+  .button {
+    color: #ffffff;
+    --border-color: var(--accent-color);
+    --bg-color: #3e4fb4;
+    --glow-color: #ffffff;
+    --glow-opacity: 0.6;
+    --highlight-color: rgb(255, 255, 255, 0.05);
+    --shadow-color: rgb(0, 0, 0, 0.1);
+  }
+
+  @media (width < 600px) {
+    margin: 0;
+  }
+}

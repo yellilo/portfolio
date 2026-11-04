@@ -1,0 +1,79 @@
+@media (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  %glowing {
+    --glow-radius: 10rem;
+
+    background-image: radial-gradient(
+      circle closest-side at var(--pointer-x) var(--pointer-y),
+      rgb(from var(--glow-color) r g b / var(--glow-opacity)),
+      transparent var(--glow-radius)
+    );
+
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    transition: --glow-opacity 0.1s ease;
+  }
+
+  [data-theme="dark"] {
+    %glowing-container {
+      background-blend-mode: hard-light;
+    }
+  }
+
+  :root:not(:hover) {
+    %glowing {
+      --glow-opacity: 0;
+    }
+  }
+
+  hr,
+  p,
+  small,
+  [data-glowing],
+  [data-glowing]::before {
+    @extend %glowing;
+  }
+
+  hr,
+  [data-glowing],
+  [data-glowing]::before {
+    @extend %glowing-container;
+  }
+}
+
+hr,
+[data-glowing] {
+  background-color: var(--border-color);
+}
+
+[data-glowing] {
+  border: var(--border-width) solid transparent;
+  border-radius: var(--border-radius);
+  position: relative;
+  isolation: isolate;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    border-radius: calc(var(--border-radius) - var(--border-width));
+
+    background-color: var(--bg-color);
+
+    --glow-opacity: 0;
+  }
+
+  &:hover::before {
+    --glow-opacity: 0.05;
+  }
+}
+
+p,
+small {
+  background-color: var(--secondary-text-color);
+  background-clip: text;
+
+  color: transparent;
+}

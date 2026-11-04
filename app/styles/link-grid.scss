@@ -1,0 +1,26 @@
+.link-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  margin-inline: 0.5rem;
+
+  font-family: var(--expanded-font-family);
+
+  & > a {
+    --icon-size: 32px;
+    display: grid;
+    grid-template-columns: var(--icon-size) 1fr;
+    height: var(--icon-size);
+    gap: 1rem;
+
+    align-items: center;
+
+    img {
+      width: var(--icon-size);
+      height: var(--icon-size);
+      object-fit: contain;
+    }
+  }
+}

@@ -1,0 +1,114 @@
+@use "reset";
+
+@use "fonts";
+@use "properties";
+@use "themes";
+
+@use "headings";
+@use "icons";
+
+@use "glowing";
+
+@use "button";
+@use "header";
+@use "section";
+
+@use "hero";
+@use "link-grid";
+
+:root {
+  --regular-font-family: "D-DIN", system-ui, sans-serif;
+  --expanded-font-family: "D-DIN Expanded", system-ui, sans-serif;
+
+  --accent-color: #677eff;
+
+  --border-radius: 0.5rem;
+  --border-width: 1px;
+
+  --outline: 2px solid;
+
+  color: var(--primary-text-color);
+  font-family: var(--regular-font-family);
+  font-size: 1.2rem;
+  line-height: 1.4;
+
+  scrollbar-color: var(--border-color) transparent;
+  scrollbar-gutter: stable both-edges;
+
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+}
+
+body {
+  background-color: var(--page-bg-color);
+  max-width: 1000px;
+  margin-inline: auto;
+  padding: 1rem;
+}
+
+a:hover,
+a:focus-visible,
+a::selection {
+  text-decoration: underline;
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.1em;
+}
+
+em {
+  font-style: italic;
+}
+
+hr {
+  height: var(--border-width);
+  margin-block: 0.5rem;
+}
+
+p {
+  margin-block: 1em;
+  --glow-color: var(--primary-text-color);
+  --glow-radius: 20rem;
+
+  a {
+    color: var(--accent-color);
+  }
+}
+
+strong {
+  font-weight: bold;
+}
+
+main {
+  header {
+    width: fit-content;
+    max-width: 100%;
+    margin-block: 2rem;
+    margin-inline: auto;
+
+    h1 {
+      font-size: 3rem;
+      font-weight: bold;
+
+      @media (width < 500px) {
+        font-size: 2rem;
+      }
+    }
+
+    hr {
+      margin-inline: max(-2vw, -2rem);
+    }
+  }
+}
+
+main {
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+::selection {
+  color: var(--primary-text-color);
+  background-color: rgb(from var(--accent-color) r g b / 0.5);
+}
+
+footer {
+  text-align: center;
+}

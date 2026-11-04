@@ -1,0 +1,25 @@
+*,
+*::before,
+*::after {
+  font: inherit;
+
+  border: none;
+  border-radius: 0;
+
+  box-sizing: border-box;
+  text-decoration: none;
+
+  margin: 0;
+  padding: 0;
+
+  background: none;
+  color: inherit;
+
+  outline: none;
+  outline-offset: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  max-width: 100%;
+}
